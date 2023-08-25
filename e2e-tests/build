@@ -6,7 +6,8 @@ set -o xtrace
 test_dir="$(dirname $0)"
 . $(dirname $0)/functions
 src_dir="$(realpath ${test_dir}/..)"
-IMAGE=$(echo "$IMAGE" | sed -e 's#percona/#perconalab/#')
+
+IMAGE="tylergu1998/percona-xtradb-cluster-operator:cov"
 
 if [[ ${DOCKER_NOCACHE:-1} == 1 ]]; then
 	no_cache="--no-cache"
